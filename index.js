@@ -32,4 +32,7 @@ abcjs.synth = {
 var editor = require('./src/edit/abc_editor');
 abcjs['Editor'] = editor;
 
+var textPrinter = require('./src/transform/abc2abc_write');
+abcjs['TextPrinter'] = textPrinter;
+
 module.exports = abcjs;
