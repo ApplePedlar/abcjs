@@ -1,6 +1,7 @@
 var version = require('./version');
 var animation = require('./src/api/abc_animation');
 var tunebook = require('./src/api/abc_tunebook');
+var tuneBookSvg = require('./src/api/abc_tunebook_svg');
 
 var abcjs = {};
 
@@ -14,7 +15,10 @@ Object.keys(tunebook).forEach(function (key) {
 	abcjs[key] = tunebook[key];
 });
 
-abcjs.renderAbc = require('./src/api/abc_tunebook_svg');
+Object.keys(tuneBookSvg).forEach(function (key) {
+	abcjs[key] = tuneBookSvg[key];
+});
+
 abcjs.renderMidi = require('./src/api/abc_tunebook_midi');
 abcjs.TimingCallbacks = require('./src/api/abc_timing_callbacks');
 

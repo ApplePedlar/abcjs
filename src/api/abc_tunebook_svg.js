@@ -51,7 +51,7 @@ function renderOne(div, tune, params, tuneNumber) {
     }
 }
 
-function renderEachLineSeparately(div, tune, params, tuneNumber) {
+var renderEachLineSeparately = function(div, tune, params, tuneNumber) {
     function initializeTuneLine(tune) {
         return {
             formatting: tune.formatting,
@@ -146,7 +146,7 @@ function renderEachLineSeparately(div, tune, params, tuneNumber) {
                 tune.engraver.staffgroups.push(tunes[k].engraver.staffgroups[0]);
         }
     }
-}
+};
 
 // A quick way to render a tune from javascript when interactivity is not required.
 // This is used when a javascript routine has some abc text that it wants to render
@@ -224,4 +224,4 @@ function doLineWrapping(div, tune, tuneNumber, abcString, params) {
 	return ret.tune;
 }
 
-module.exports = renderAbc;
+module.exports = { "renderAbc": renderAbc, "renderEachLineSeparately": renderEachLineSeparately };
